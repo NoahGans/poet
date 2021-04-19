@@ -1,0 +1,40 @@
+1 Fir
+evergreen
+tall height
+smooth leaves
+grey bark
+green needles
+needles
+
+2 Sycamore
+deciduous
+medium height
+dense leaves
+grey bark
+big leaves
+
+3 Aspen
+disciduous
+small height
+green leaves
+shimmering leaves
+white bark
+
+4 Grass
+flat
+short
+green
+vast
+
+5 Sage Brush
+green
+short
+rough
+smells
+plentiful
+simple
+
+
+
+
+

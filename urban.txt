@@ -1,0 +1,117 @@
+1 Sidewalk
+gray
+flat
+rough
+short
+smooth
+
+
+
+2 Skyscraper
+tall
+gray
+clear
+glass
+big
+
+
+
+3 Parking Lot
+black
+asphault
+vast
+wide
+full
+empty
+
+
+4 Bench
+short
+brown
+grey
+concrete
+simple
+
+
+5 Lamp Post
+tall
+thin
+skinny
+light
+grey
+white
+yellow
+
+
+
+
+
+
+
+% Queries
+% victim(X)
+% person_location_at_murder(person, X)
+% location_of_body(X)
+% findall(X, person_location_at_murder(X, location), Z)
+% suspect_from_location(Suspect)
+% suspect_from_item(Suspect, Weapon)
+% suspect_from_all_data(Suspect, Weapon)
+
+
+
+victim(pancake).
+
+people_in_building_before_alarm(pancake, toast, spoon, fork, butter, syrup).
+people_in_building_after_alarm(toast, spoon, fork, butter, syrup).
+
+location_of_body(bathroom).
+
+person_location_at_murder(toast, bathroom).
+person_location_at_murder(butter, bathroom).
+person_location_at_murder(fork, lobby).
+person_location_at_murder(syrup, lobby).
+person_location_at_murder(spoon, lab).
+person_location_at_murder(fork, lab).
+
+person_item(toast, pen).
+person_item(fork, bat).
+person_item(spoon, knife).
+person_item(syrup, cactus).
+person_item(butter, gun).
+
+
+
+blood_on_item(pen).
+dna_on_item(rope).
+
+%location_of_persons_at_deth(Location):-
+ %   findall(X, person_location_at_murder(X, Location), Z).
+
+
+
+suspect_from_location(Suspect):-
+    location_of_body(X),
+    person_location_at_murder(Suspect, X).
+
+suspect_from_item(Suspect, Weapon):-
+    blood_on_item(Weapon);
+    dna_on_item(Weapon),
+    person_item(Suspect, Weapon).
+    
+suspect_from_all_data(Suspect, Weapon):-
+    person_item(Suspect, Weapon),
+    suspect_from_item(Suspect, Weapon),
+    suspect_from_location(Suspect).
+                                     
+
+
+
+
+
+
+
+
+
+
+
+
